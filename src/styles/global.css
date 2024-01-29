@@ -1,0 +1,18 @@
+.main-layout {
+  display: grid;
+  height: 100vh;
+  margin: auto;
+  grid-template-rows: 100px auto;
+  grid-template-columns: 300px 1fr;
+  gap: 0;
+}
+
+.sidebar {
+  grid-row: 1/-1;
+}
+
+.navbar {
+}
+
+.main {
+}

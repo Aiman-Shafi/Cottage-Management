@@ -12,12 +12,13 @@ import Users from "./pages/Users";
 import PageNotFound from "./pages/PageNotFound";
 import Account from "./pages/Account";
 import MainLayout from "./components/MainLayout";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const queryClient = new QueryClient({
     defaultOptions: {
       queries: {
-        staleTime: 60 * 1000,
+        staleTime: 0,
       },
     },
   });
@@ -42,6 +43,27 @@ function App() {
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+        gutter={8}
+        containerClassName=""
+        containerStyle={{}}
+        toastOptions={{
+          // Define default options
+          className: "",
+          duration: 5000,
+          style: {
+            background: "#363636",
+            color: "#fff",
+          },
+
+          // Default options for specific types
+          success: {
+            duration: 5000,
+          },
+        }}
+      />
     </QueryClientProvider>
   );
 }

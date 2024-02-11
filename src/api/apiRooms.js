@@ -10,3 +10,25 @@ export async function getRooms() {
 
   return data;
 }
+
+export async function deleteRooms(id) {
+  const { data, error } = await supabase.from("rooms").delete().eq("id", id);
+  if (error) {
+    console.error(error);
+    throw new Error("Rooms could not be Deleted");
+  }
+
+  return data;
+}
+
+export async function createRoom(newRoom) {
+  const { data, error } = await supabase
+    .from("rooms")
+    .insert([newRoom])
+    .select();
+  if (error) {
+    console.error(error);
+    throw new Error("Rooms could not be Deleted");
+  }
+  return data;
+}

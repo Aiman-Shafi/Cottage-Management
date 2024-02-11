@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-import { getRooms } from "../api/apiRooms";
 import RoomTable from "../features/Rooms/RoomTable";
 
 export default function Rooms() {

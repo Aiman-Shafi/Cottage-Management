@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { getRooms } from "../../api/apiRooms";
+import CreateRooms from "./CreateRooms";
 import TableRow from "./TableRow";
 
 export default function RoomTable() {
@@ -20,7 +21,6 @@ export default function RoomTable() {
     queryFn: getRooms,
   });
 
-  //   console.log(data);
   if (isLoading) return <div>Loading.....</div>;
 
   return (
@@ -69,6 +69,9 @@ export default function RoomTable() {
           ))}
         </tbody>
       </table>
+      <div className="mt-20">
+        <CreateRooms />
+      </div>
     </>
   );
 }
